@@ -61,12 +61,12 @@ class PaintView : View{
         postInvalidate()
         return false
     }
-
-    override fun onDraw(canvas: Canvas) {
+    
+    override fun onDraw(canvas: Canvas?) {
 
         for (i in pathList.indices){
             paintBrush.color = colorList[i]
-            canvas.drawPaint(pathList[i], paintBrush)
+            canvas!!.drawPath(pathList[i], paintBrush)
             invalidate()
         }
 
